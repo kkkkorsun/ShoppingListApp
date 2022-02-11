@@ -1,6 +1,5 @@
 package com.shoppinglist.app.presentation
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout

@@ -7,7 +7,7 @@ import com.shoppinglist.app.domain.EditShopListItem
 import com.shoppinglist.app.domain.GetShopListUseCase
 import com.shoppinglist.app.domain.ShopItem
 
-class MainViewModel() : ViewModel() {
+class MainViewModel : ViewModel() {
 
     private val repository = ShopListRepositoryImpl
 
@@ -23,7 +23,7 @@ class MainViewModel() : ViewModel() {
     }
 
     fun changeEnableState(shopItem: ShopItem) {
-        val newItem = shopItem.copy(enabled = shopItem.enabled)
+        val newItem = shopItem.copy(enabled = !shopItem.enabled)
         editShopListItem.editItem(newItem)
 
     }
