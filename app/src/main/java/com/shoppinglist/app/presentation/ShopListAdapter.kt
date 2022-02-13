@@ -1,11 +1,8 @@
 package com.shoppinglist.app.presentation
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.shoppinglist.app.R
 import com.shoppinglist.app.databinding.ItemShopDisabledBinding
 import com.shoppinglist.app.databinding.ItemShopEnabledBinding
 import com.shoppinglist.app.domain.ShopItem
@@ -14,8 +11,9 @@ class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     companion object {
-        private const val TYPE_DISABLED = 0
-        private const val TYPE_ENABLED = 1
+        const val TYPE_DISABLED = 0
+        const val TYPE_ENABLED = 1
+        const val MAX_POOL_SIZE = 15
 
     }
 
