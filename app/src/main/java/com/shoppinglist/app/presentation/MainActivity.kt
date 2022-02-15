@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.shoppinglist.app.R
+import com.shoppinglist.app.domain.ShopItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,5 +38,8 @@ class MainActivity : AppCompatActivity() {
                 ShopListAdapter.MAX_POOL_SIZE
             )
         }
+        shopListAdapter.onShopItemLongClickListener = {
+                viewModel.changeEnableState(it)
+            }
+        }
     }
-}

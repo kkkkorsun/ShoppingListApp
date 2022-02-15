@@ -22,10 +22,10 @@ class MainViewModel : ViewModel() {
         deleteShopListItem.deleteItem(shopItem)
     }
 
-//    fun changeEnableState(shopItem: ShopItem) {
-//        val newItem = shopItem.copy(enabled = !shopItem.enabled)
-//        editShopListItem.editItem(newItem)
-//    }
+    fun changeEnableState(shopItem: ShopItem) {
+        val newItem = shopItem.copy(enabled = !shopItem.enabled)
+        editShopListItem.editItem(newItem)
+    }
 
 
 }
