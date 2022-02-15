@@ -9,7 +9,6 @@ class MainViewModel : ViewModel() {
     private val repository = ShopListRepositoryImpl
 
     private val getShopListUseCase = GetShopListUseCase(repository)
-    private val getShopListItem = GetShopListItem(repository)
     private val deleteShopListItem = DeleteShopListItem(repository)
     private val editShopListItem = EditShopListItem(repository)
 

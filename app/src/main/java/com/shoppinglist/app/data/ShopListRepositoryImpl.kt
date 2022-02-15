@@ -14,7 +14,7 @@ object ShopListRepositoryImpl : ShopListRepository {
     private var autoIncrementID = 0
 
     init {
-        for (i in 0 until 5) {
+        for (i in 0 until 10) {
             val item = ShopItem("$i", i, Random.nextBoolean())
             addItem(item)
         }
