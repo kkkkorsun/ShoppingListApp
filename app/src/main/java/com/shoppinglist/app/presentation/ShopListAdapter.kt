@@ -17,17 +17,16 @@ class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     }
 
-    interface OnShopItemLongClickListener {
-        fun onShopItemLongClick(shopItem: ShopItem)
-    }
-
     var shopList = listOf<ShopItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
-    var onShopItemLongClickListener: ((ShopItem) -> Unit?)? = null
+
+    var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
+
+    var onShopItemClickListAdapter: ((ShopItem) -> Unit)? = null
 
     override fun getItemCount(): Int {
         return shopList.size
@@ -81,6 +80,10 @@ class ShopListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         viewHolder.itemView.setOnLongClickListener {
             onShopItemLongClickListener?.invoke(shopItem)
             true
+        }
+
+        viewHolder.itemView.setOnClickListener {
+            onShopItemClickListAdapter?.invoke(shopItem)
         }
 
     }
