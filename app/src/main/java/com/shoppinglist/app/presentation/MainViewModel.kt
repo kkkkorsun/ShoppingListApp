@@ -9,18 +9,18 @@ class MainViewModel : ViewModel() {
     private val repository = ShopListRepositoryImpl
 
     private val getShopListUseCase = GetShopListUseCase(repository)
-    private val deleteShopListItem = DeleteShopListItem(repository)
-    private val editShopListItem = EditShopListItem(repository)
+    private val deleteShopItemUseCase = DeleteShopListItem(repository)
+    private val editShopItemUseCase = EditShopListItem(repository)
 
     val shopList = getShopListUseCase.getShopList()
 
     fun deleteShopItem(shopItem: ShopItem) {
-        deleteShopListItem.deleteItem(shopItem)
+        deleteShopItemUseCase.deleteItem(shopItem)
     }
 
     fun changeEnableState(shopItem: ShopItem) {
-        val newItem = shopItem.copy(enabled = !shopItem.enabled)
-        editShopListItem.editItem(newItem)
+        val     newItem = shopItem.copy(enabled = !shopItem.enabled)
+        editShopItemUseCase.editItem(newItem)
     }
 
 }
