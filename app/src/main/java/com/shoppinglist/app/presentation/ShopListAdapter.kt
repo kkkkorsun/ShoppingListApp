@@ -35,14 +35,12 @@ class ShopListAdapter: ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCal
         viewHolder.tvCount.text = shopItem.count.toString()
     }
 
-
     companion object {
         const val TYPE_DISABLED = 0
         const val TYPE_ENABLED = 1
         const val MAX_POOL_SIZE = 15
 
     }
-
 
     override fun getItemViewType(position: Int): Int {
         return if (getItem(position).enabled) TYPE_ENABLED else TYPE_DISABLED
