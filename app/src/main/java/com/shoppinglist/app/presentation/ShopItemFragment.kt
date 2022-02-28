@@ -17,7 +17,7 @@ import com.shoppinglist.app.R
 import com.shoppinglist.app.domain.ShopItem
 
 class ShopItemFragment(
-    private val screenMode: String = MODE_UNKNOWN,
+    private val screenMode: String,
     private val shopItemId: Int = ShopItem.UNDEFINED_ID
 ) : Fragment() {
 
@@ -169,7 +169,7 @@ class ShopItemFragment(
         }
 
         fun newInstanceAddItem(): ShopItemFragment {
-            return ShopItemFragment(ShopItemFragment.MODE_ADD)
+            return ShopItemFragment(MODE_ADD)
         }
 
         fun newInstanceEditItem(shopItemId: Int): ShopItemFragment {

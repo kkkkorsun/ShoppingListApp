@@ -3,22 +3,26 @@ package com.shoppinglist.app.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.textfield.TextInputLayout
 import com.shoppinglist.app.R
 import com.shoppinglist.app.domain.ShopItem
 
 class ShopItemActivity : AppCompatActivity() {
-
-
-    private var screenMode = MODE_UNKNOWN
+    private var screenMode = ""
     private var shopItemId = ShopItem.UNDEFINED_ID
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_item)
         parseIntent()
-
+//        viewModel = ViewModelProvider(this).get(ShopItemViewModel::class.java)
+//        initViews()
 //        addTextChangeListeners()
         launchRightMode()
 //        observeViewModel()
@@ -157,6 +161,7 @@ class ShopItemActivity : AppCompatActivity() {
             intent.putExtra(EXTRA_SHOP_ITEM_ID, shopItemId)
             return intent
         }
+
     }
 
 }
